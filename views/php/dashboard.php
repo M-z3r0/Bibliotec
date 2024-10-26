@@ -1,24 +1,26 @@
 <?php
   include("../../controllers/config.php");
   include("../../controllers/protect.php");
-  if($_SESSION['userType'] == "adm"){
-    ?>
-      <html>
-        <head>
-          <link rel="stylesheet" href="../../models/style/dashboard.css">
-        </head>
-        <body>
-          <header>
-            <div class="logo"><a href="home.php"><img src="" alt="Logo"></a></div>
-          
-            <div class="dropbutton-container">
-              <button class="dropbutton" onclick="toggleDropdown()">Menu</button>
-              <div id="dropdown-content" class="dropdown-content">
-                  <a href="#">Logout</a>
-              </div>
+  ?>
+    <html>
+      <head>
+        <link rel="stylesheet" href="../../models/style/dashboard.css">
+      </head>
+      <body>
+        <header>
+          <div class="logo"><a href="home.php"><img src="" alt="Logo"></a></div>
+        
+          <div class="dropbutton-container">
+            <button class="dropbutton" onclick="toggleDropdown()">Menu</button>
+            <div id="dropdown-content" class="dropdown-content">
+                <a href="../../models/functions/php/logout.php">Logout</a>
             </div>
-          </header>
-          <section class="main-container">
+          </div>
+        </header>
+        <section class="main-container">
+        <?php 
+          if($_SESSION['userType'] == "adm"){
+            ?>
             <h1>dashboard</h1>
             <div class="block-container">
               <div class="block box-biblioteca">
@@ -54,13 +56,15 @@
                 </form>
               </div>
             </div>
-          </section><!--Section do conteúdo-->
-          <footer>
-            <p>Todos os direitos reservados</p>
-          </footer><!--Rodapé-->
-          <script src="../../models/functions/js/dropBtnDashBoard.js"></script>
-        </body>
-      </html>
-    <?php
-  }
+          <?php
+          }
+        ?>
+        </section><!--Section do conteúdo-->
+        <footer>
+          <p>Todos os direitos reservados</p>
+        </footer><!--Rodapé-->
+        <script src="../../models/functions/js/dropBtnDashBoard.js"></script>
+      </body>
+    </html>
+  <?php
 ?>

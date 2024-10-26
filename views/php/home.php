@@ -21,16 +21,40 @@
   </header>
   <section class="main-container">
       <aside class="sidebar">
-          <div class="icon">🔶</div>
-          <div class="icon">🔶</div>
-          <div class="icon">🔶</div>
-          <div class="icon">🔶</div>
+        <?php
+          if(isset($_SESSION['userType']) && $_SESSION['userType'] == "adm"){
+            ?>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+            <?php
+          }
+          if(isset($_SESSION['userType']) && $_SESSION['userType'] == "func"){
+            ?>
+              <div class="icon"><a href="?actions=cadLivro">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+            <?php
+          }
+          if(isset($_SESSION['userType']) && $_SESSION['userType'] == "aluno"){
+            ?>
+             <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="">🔶</a></div>
+            <?php
+          }
+        ?>
       </aside>
       <div class="content">
           <h1>Texto</h1>
           <?php
-            switch(@$_REQUEST['actions']){
-
+            switch(@$_REQUEST['actions']){      
+              case "cadLivro":
+                include("../sub/php/cadLivro.php");
+              break;
               default:
                 include("../sub/php/defaultInclude.php");
               break;
