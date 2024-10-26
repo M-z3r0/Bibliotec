@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  min-height: 60dvh;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1200px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.form-container,
+.image-container {
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+div.log-options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .form-container,
+  .image-container {
+      width: 100%;
+  }
+
+  /* Garantindo que o formulário não ocupe toda a largura da tela */
+  form {
+      width: 90%;
+      max-width: 400px;
+  }
+
+  /* Ajustando margens para melhorar a aparência no mobile */
+  .image-container, .form-container {
+      margin-bottom: 20px;
+  }
+}
