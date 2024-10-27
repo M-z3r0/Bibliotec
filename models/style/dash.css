@@ -66,18 +66,20 @@ header {
 .main-container {
   flex: 1;
   & .block-container{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 5dvh 0;
+    flex-wrap: wrap;
     & .block{
-      float: left;
       min-width: 40dvw;
       max-width: 40%;
       min-height: 20dvh;
-      height: 60dvh;
+      height: 40dvh;
       max-height: 40dvh;
       border-radius: 20px;
-      background-color: #b2dfdb;
+      background-color: #5b7875;
+      margin: 10px; /* Espaço entre as divs */
     }  
     & .box-biblioteca{
       text-align: center;

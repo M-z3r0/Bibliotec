@@ -4,7 +4,7 @@
   ?>
     <html>
       <head>
-        <link rel="stylesheet" href="../../models/style/dashboard.css">
+        <link rel="stylesheet" href="../../models/style/dash.css">
       </head>
       <body>
         <header>
@@ -18,10 +18,10 @@
           </div>
         </header>
         <section class="main-container">
+        <h1>dashboard</h1>
         <?php 
           if($_SESSION['userType'] == "adm"){
             ?>
-            <h1>dashboard</h1>
             <div class="block-container">
               <div class="block box-biblioteca">
                 <div class="top">
@@ -36,7 +36,7 @@
                   ?>
                 </div>
                 <div class="bottom">
-                  <a href="?admAction=verBiblio">Gerenciar bibliotecas</a>
+                  <a href="">Gerenciar bibliotecas</a>
                 </div>
               </div>
               <div class="block create-biblioteca">
@@ -55,6 +55,16 @@
                   <button type="submit">Cadastrar</button>
                 </form>
               </div>
+            </div>
+          <?php
+          }
+          if($_SESSION['userType'] == "func"){
+          ?>
+            <div class="block-container">
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
             </div>
           <?php
           }

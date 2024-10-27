@@ -8,11 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página com Barra Lateral</title>
-    <link rel="stylesheet" href="../../models/style/home.css">
+    <link rel="stylesheet" href="../../models/style/homepage.css">
 </head>
 <body>
   <header>
-      <div class="logo">Logo</div>
+      <div class="logo"><a href="?actions="><img src="" alt="Logo"></a></div>
       <div class="search-bar">
           <input type="text" placeholder="Pesquisar...">
           <button class="search-btn">🔍</button>
@@ -40,7 +40,7 @@
           }
           if(isset($_SESSION['userType']) && $_SESSION['userType'] == "aluno"){
             ?>
-             <div class="icon"><a href="">🔶</a></div>
+             <div class="icon"><a href="?actions=catalogo">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
@@ -54,6 +54,12 @@
             switch(@$_REQUEST['actions']){      
               case "cadLivro":
                 include("../sub/php/cadLivro.php");
+              break;
+              case "catalogo":
+                include("../sub/php/catalogo.php");
+              break;
+              case "book":
+                include("../sub/php/book.php");
               break;
               default:
                 include("../sub/php/defaultInclude.php");
