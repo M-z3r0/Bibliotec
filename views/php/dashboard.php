@@ -68,6 +68,11 @@
             </div>
           <?php
           }
+          if($_SESSION['userType'] == "aluno"){
+            ?>
+              
+            <?php
+          }
         ?>
         </section><!--Section do conteúdo-->
         <footer>

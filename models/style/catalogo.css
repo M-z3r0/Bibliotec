@@ -1,0 +1,17 @@
+.main-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: red;
+  max-height: 150dvh;
+  overflow-y: scroll;
+}
+
+.book{
+  width: 125px;
+  height: 175px;
+  border: 1px solid black;
+  margin: 15px 22px;
+  display: flex;
+  
+}

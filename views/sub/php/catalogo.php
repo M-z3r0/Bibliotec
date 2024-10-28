@@ -7,7 +7,7 @@
 ?>
 <html>
   <head>
-
+    <link rel="stylesheet" href="../../models/style/catalogo.css">
   </head>
   <body>
     <h1 style="text-align:left;">Catálogo</h1>
