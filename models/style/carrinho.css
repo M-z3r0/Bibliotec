@@ -1,0 +1,18 @@
+.m-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: red;
+  max-height: 150dvh;
+  overflow-y: scroll;
+}
+.book-sec{
+  min-width: 28dvw;
+  max-width: 30%;
+  min-height: 20dvh;
+  height: 40dvh;
+  max-height: 40dvh;
+  border-radius: 20px;
+  background-color: #5b7875;
+  margin: 10px; /* Espaço entre as divs */
+}

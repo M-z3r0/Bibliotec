@@ -8,7 +8,7 @@
 
 <html>
   <head>
-    <link rel="stylesheet" href="../../models/style/book.css">
+    <link rel="stylesheet" href="../../models/style/bookPage.css">
   </head>
   <body>
     <div class="book-container">
@@ -38,8 +38,22 @@
 
       <!-- Inputs adicionais -->
       <div class="section input-section">
-        <input type="button" value="Reservar">
-        <input type="button" value="Renovar">
+        <?php
+          if($_SESSION['userType'] == "aluno"){
+            ?>
+              <input type="button" value="Reservar Este">
+              <form action="../../models/functions/php/addCart.php" method="get">
+                <?php $_SESSION['livroCod'] = $livroCod;?>
+                <input type="submit" value="Adicionar ao Carrinho"">
+              </form>
+              <input type="button" value="Renovar">
+            <?php
+          }else if($_SESSION['userType'] == "func"){
+            ?>
+              <input type="button" value="Editar">
+            <?php
+          }
+        ?>
       </div>
     </div>
   </body>

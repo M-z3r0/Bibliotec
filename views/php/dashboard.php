@@ -19,6 +19,7 @@
         </header>
         <section class="main-container">
         <h1>dashboard</h1>
+
         <?php 
           if($_SESSION['userType'] == "adm"){
             ?>

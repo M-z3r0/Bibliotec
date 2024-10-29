@@ -4,7 +4,7 @@
   if(!isset($_SESSION)){
       session_start();
   }
-  if($_SESSION['userType'] = "adm"){
+  if($_SESSION['userType'] = "func"){
     $biblioCod = $_SESSION['biblioCod'];
     $livro_cod = $_POST['livro_cod'];
     $livro_tombo = $_POST['livro_tombo'];

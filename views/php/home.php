@@ -24,7 +24,7 @@
         <?php
           if(isset($_SESSION['userType']) && $_SESSION['userType'] == "adm"){
             ?>
-              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="?actions=catalogo">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
@@ -41,7 +41,7 @@
           if(isset($_SESSION['userType']) && $_SESSION['userType'] == "aluno"){
             ?>
              <div class="icon"><a href="?actions=catalogo">🔶</a></div>
-              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="?actions=carrinho">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
             <?php
@@ -60,6 +60,9 @@
               break;
               case "book":
                 include("../sub/php/book.php");
+              break;
+              case "carrinho":
+                include("../sub/php/cart.php");
               break;
               default:
                 include("../sub/php/defaultInclude.php");

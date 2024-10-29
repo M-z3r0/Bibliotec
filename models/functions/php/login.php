@@ -5,13 +5,15 @@
     session_destroy();
   }
   if(isset($_POST['log']) && $_POST['log'] == "adm"){
-    if(isset($_POST['user_cod']) && isset($_POST['user_password'])){
+    if(isset($_POST['biblio_cod']) && isset($_POST['user_cod']) && isset($_POST['user_password'])){
+      $biblioCod = $_POST['biblio_cod'];
       $userCod = $_POST['user_cod'];
       $userPassWord = $_POST['user_password'];
       $sqlcode = "SELECT * FROM adm WHERE adm_cod = '$userCod' AND adm_senha = '$userPassWord'";
       $sqlquery = $conn->query($sqlcode);
       $qtdRowAffected = $sqlquery->num_rows;
       if($qtdRowAffected == 1){
+        echo 1;
         $adm = $sqlquery->fetch_assoc();
         if(!isset($_SESSION)){
           session_start();
@@ -19,7 +21,11 @@
         $_SESSION['userType'] = "adm";
         $_SESSION['userCod'] = $adm['adm_cod'];
         $_SESSION['userName'] = $adm['adm_user'];
+        $_SESSION['biblioCod'] = $biblioCod;
         header("Location: ../../../views/php/home.php");
+      }else{
+        echo "<script>alert('Usuário não encontrado');</script>";
+        header("Refresh: 0.5; ../../../views/html/index.html");
       }
     }
   }//Login com ADM
@@ -64,8 +70,8 @@
         }
         $_SESSION['userType'] = "aluno";
         $_SESSION['biblioCod'] = $aluno['biblio_cod'];
-        $_SESSION['userCod'] = $aluno['func_cod'];
-        $_SESSION['userName'] = $aluno['func_nome'];
+        $_SESSION['userCod'] = $aluno['aluno_rm'];
+        $_SESSION['userName'] = $aluno['aluno_nome'];
         header("Location: ../../../views/php/home.php");
       }else{
         echo "<script>alert('Usuário não encontrado');</script>";

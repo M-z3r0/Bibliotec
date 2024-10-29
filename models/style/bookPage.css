@@ -5,9 +5,9 @@
   width: 100%;
   border: 1px solid #000;
   padding: 20px;
-  height: 70dvh;
-  max-height: 70dvh;
-}
+  height: 90dvh;
+  max-height: 90dvh;
+} 
 
 /* Seções destacadas */
 .section {
@@ -81,7 +81,7 @@
   gap: 10px;
 }
 
-.input-section input {
+.input-section > form > input {
   width: 100%;
   max-width: 100px;
   padding: 8px;
