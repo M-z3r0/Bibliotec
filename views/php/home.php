@@ -33,7 +33,7 @@
           if(isset($_SESSION['userType']) && $_SESSION['userType'] == "func"){
             ?>
               <div class="icon"><a href="?actions=cadLivro">🔶</a></div>
-              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="?actions=listar">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
               <div class="icon"><a href="">🔶</a></div>
             <?php
@@ -42,8 +42,7 @@
             ?>
              <div class="icon"><a href="?actions=catalogo">🔶</a></div>
               <div class="icon"><a href="?actions=carrinho">🔶</a></div>
-              <div class="icon"><a href="">🔶</a></div>
-              <div class="icon"><a href="">🔶</a></div>
+              <div class="icon"><a href="faq.php">🔶</a></div>
             <?php
           }
         ?>
@@ -63,6 +62,12 @@
               break;
               case "carrinho":
                 include("../sub/php/cart.php");
+              break;
+              case "listar":
+                include("../sub/php/listarLivro.php");
+              break;
+              case "editarLivro":
+                include("../sub/php/editarLivro.php");
               break;
               default:
                 include("../sub/php/defaultInclude.php");

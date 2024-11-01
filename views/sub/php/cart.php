@@ -33,7 +33,10 @@
             <?php
               echo "<a href='../../views/php/home.php?actions=book&livroCod={$livroCod}'><img style='width:50px;' src='../../{$livro['livro_capa']}'></a>";
             ?>
-              <form action="">
+              <form action="../../models/functions/php/removeFromCart.php" method="GET">
+                <?php 
+                  echo "<input style='visibility:hidden;position:absolute;' name='livro1'>";
+                ?>
                 <button>Remover</button>
               </form>
             </div>
@@ -53,7 +56,10 @@
             <?php
               echo "<a href='../../views/php/home.php?actions=book&livroCod={$livroCod}'><img style='width:50px;' src='../../{$livro['livro_capa']}'></a>";
             ?>
-              <form action="">
+              <form action="../../models/functions/php/removeFromCart.php" method="livro2">
+                <?php 
+                  echo "<input style='visibility:hidden;position:absolute;' name='livro2'>";
+                ?>
                 <button>Remover</button>
               </form>
             </div>
@@ -73,7 +79,10 @@
             <?php
               echo "<a href='../../views/php/home.php?actions=book&livroCod={$livroCod}'><img style='width:50px;' src='../../{$livro['livro_capa']}'></a>";
             ?>
-              <form action="">
+              <form action="../../models/functions/php/removeFromCart.php" method="get">
+                <?php 
+                  echo "<input style='visibility:hidden;position:absolute;' name='livro3'>";
+                ?>
                 <button>Remover</button>
               </form>
             </div>
@@ -81,8 +90,17 @@
           }
         }
       }
-    }
-   
+     
   ?>
   </div>
+  <?php
+    if($carrinho['carrinho_livro1'] != null || $carrinho['carrinho_livro2'] != null || $carrinho['carrinho_livro3'] != null){
+      ?>
+      <form action="../../models/functions/php/confirmOrderPegar.php">
+        <button> confirmar pedido </button>
+      </form>
+      <?php
+    } 
+  }
+  ?>
 </html>

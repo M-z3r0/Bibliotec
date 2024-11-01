@@ -26,7 +26,7 @@
     }
     {
       $tablePedido = "pedidos".$biblio_cod;
-      $sqlcode = "CREATE TABLE IF NOT EXISTS $tablePedido(pedido_id int NOT NULL AUTO_INCREMENT, pedido_livro1 varchar(255), pedido_livro2 varchar(255), pedido_livro3 varchar(255), pedido_tipo int(1) default 0,aluno_rm int,biblio_cod int, FOREIGN KEY (biblio_cod) REFERENCES bibliotecas(biblio_cod), FOREIGN KEY (aluno_rm) REFERENCES $tableAluno(aluno_rm), PRIMARY KEY (pedido_id))";
+      $sqlcode = "CREATE TABLE IF NOT EXISTS $tablePedido(pedido_id int NOT NULL AUTO_INCREMENT, pedido_livro1 varchar(255), pedido_livro2 varchar(255), pedido_livro3 varchar(255), pedido_tipo int(1) default 0, pedido_visto int (1) default 0,aluno_rm int,biblio_cod int, FOREIGN KEY (biblio_cod) REFERENCES bibliotecas(biblio_cod), FOREIGN KEY (aluno_rm) REFERENCES $tableAluno(aluno_rm), PRIMARY KEY (pedido_id))";
       $sqlquery = $conn->query($sqlcode);
     }
     {

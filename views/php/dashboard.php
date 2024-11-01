@@ -62,10 +62,30 @@
           if($_SESSION['userType'] == "func"){
           ?>
             <div class="block-container">
-              <div class="block"></div>
-              <div class="block"></div>
-              <div class="block"></div>
-              <div class="block"></div>
+              <div class="block">
+                <h2>Pedidos de emprestimos:</h2>
+                <?php
+                  $tablePedidos = "pedidos".$_SESSION['biblioCod'];
+                  $sqlcode = "SELECT * FROM $tablePedidos WHERE pedido_tipo = 0 AND pedido_visto = 0";
+                  $sqlquery = $conn->query($sqlcode);
+                  $qtdRowAffecteds = $sqlquery->num_rows;
+                  echo $qtdRowAffecteds;
+                ?>
+                <br>
+                <a href="orders.php?tipoPedido=0">Verificar Pedidos</a>
+              </div>
+              <div class="block">
+                <h2>Solicitações de devolução:</h2>
+                <?php
+                  $tablePedidos = "pedidos".$_SESSION['biblioCod'];
+                  $sqlcode = "SELECT * FROM $tablePedidos WHERE pedido_tipo = 1 AND pedido_visto = 0";
+                  $sqlquery = $conn->query($sqlcode);
+                  $qtdRowAffecteds = $sqlquery->num_rows;
+                  echo $qtdRowAffecteds;
+                ?>
+                <br>
+                <a href="orders.php?tipoPedido=1">Verificar Pedidos</a>
+              </div>
             </div>
           <?php
           }

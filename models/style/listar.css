@@ -1,0 +1,13 @@
+.listar{
+  width: 100%;
+  padding: 5dvh 0;
+  flex-wrap: nowrap;
+}
+
+table{
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 20dvh;
+  overflow-x: scroll;
+  margin: 5px; /* Espaço entre as divs */
+}

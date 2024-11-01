@@ -78,4 +78,4 @@
         header("Refresh: 0.5; ../../../views/html/index.html");
       }
     }
-  }//Login como Funcionário
+  }//Login como Aluno
