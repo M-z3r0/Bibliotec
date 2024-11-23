@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #4d1147;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  & a{
+    .imglogo{
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+.dropbutton-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbutton {
+  padding: 8px;
+  font-size: 1rem;
+  background-color: #1b0126;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostra o dropdown quando ativado */
+.show {
+  display: block;
+}
+
+.main-container {
+  background-color: #2f0a2b;
+  flex: 1;
+}
+
+.tabela-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%; /* Ajuste a largura conforme necessário */
+  max-height: 70dvh;
+  overflow-y: auto;
+  color: white;
+}
+
+table, th, td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+td a {
+  width: 100px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #1b0126;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilização das ações */
+td a:hover {
+  opacity: 0.8;
+}
+
+footer {
+  background-color: #ecd8ff;
+  text-align: center;
+  padding: 10px;
+}

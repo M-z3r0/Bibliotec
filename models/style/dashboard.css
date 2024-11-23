@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #4d1147;
+}
+
+.book-sec img{
+  padding: 10px;
+  min-width: 10dvh;
+  max-width: 20dvh;
+  min-height: 10dvh;
+  max-height: 20dvh;
+}
+
+.book-sec a{
+  align-items: center;
+  min-width: 10dvh;
+  max-width: 20dvh;
+  min-height: 10dvh;
+  max-height: 20dvh;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  & a{
+    .imglogo{
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+/*
+  DROPBUTTON
+*/
+
+.dropbutton-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbutton {
+  padding: 8px;
+  font-size: 1rem;
+  background-color: #1b0126;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostra o dropdown quando ativado */
+.show {
+  display: block;
+}
+
+.main-container {
+  background-color: #2f0a2b;
+  flex: 1;
+  & .block-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5dvh 0;
+    flex-wrap: wrap;
+    & .block{
+      min-width: 40dvw;
+      max-width: 40%;
+      min-height: 20dvh;
+      height: 55dvh;
+      max-height: 55dvh;
+      border-radius: 20px;
+      background-color: #4d1147;
+      color:#ffffff;
+      text-align: center;
+      padding: 2dvh 2dvh 2dvh 2dvh;
+      margin: 10px; /* Espaço entre as divs */
+    }
+    & .block a{
+      color: #ffffff;
+      
+      margin-top: 10dvh;
+      /*float: bottom;*/
+      text-align: center;
+      align-self: center;
+      font-size: 120%;
+    }
+    & .block p{
+      margin-top: 10dvh;
+      text-align: center;
+      align-self: center;
+      font-size: 200%;
+    }
+    & .box-biblioteca{
+      text-align: center;
+      justify-content: center;
+      & .top{
+        height: 10%;
+      }
+      & .mid{
+        height: 70%;
+        font-size: 40px;
+        padding: 10dvh;
+      }
+      & .mid p{
+        text-align: center;
+        align-self: center;
+        font-size: 120%;
+      }
+      & .bottom{
+        height: 10%;
+      }
+    }
+    & .create-biblioteca{
+      text-align: center;
+      overflow-y:scroll;
+      padding: 5px 20px 20px 20px;
+      .create-btn{
+        width: 50%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      form{
+        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        align-items: center;
+        align-content: center;
+        gap: 15px; 
+      }
+      form label {
+        font-size: 14px;
+        color: #ffffff;
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      
+      form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #1b0126;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        grid-column: 1 / -1;
+      }
+      
+      form button:hover {
+        background-color: #3a0650;
+      }    
+    }
+  }
+  & h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+}
+
+/*Parte do aluno*/
+
+.books-container{
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  float: left;
+  background: #4d1147;
+  max-height: 90dvh;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  & .book-sec{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    min-width: 20dvw;
+    max-width: 100%;
+    min-height: 15dvh;
+    height: 20dvh;
+    max-height: 40dvh;
+    border-radius: 20px;
+    background-color: #1b0126;
+    margin: 10px; /* Espaço entre as divs */
+  }
+  form button {
+    width: 100%;
+    height: 8dvh;
+    margin-top: 5dvh;;
+    padding: 10px;
+    background-color: #1b0126;
+    color: #fff;
+    border: 2px solid #3a0650;
+    border-radius: 4px;
+    font-size: 120%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    grid-column: 3 / -2;
+  }
+  form button:hover {
+    background-color: #3a0650;
+  }
+}
+
+footer {
+  background-color: #d48ee6;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsividade */
+
+/* Para telas menores que 1024px */
+@media (max-width: 1024px) {
+  header {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo a .imglogo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main-container {
+    padding: 5dvh 2dvh;
+  }
+
+  .block-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block {
+    min-width: 80%;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .box-biblioteca .mid {
+    font-size: 30px;
+    padding: 5dvh;
+  }
+
+  .books-container {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 10%;
+  }
+
+  .book-sec {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .dropbutton {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .block {
+    padding: 2dvh;
+    font-size: 0.9rem;
+  }
+
+  .create-biblioteca {
+    padding: 10px;
+  }
+
+  .create-biblioteca .create-btn {
+    width: 80%;
+    padding: 8px;
+  }
+
+  .book-sec {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo a .imglogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .block-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .block {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .box-biblioteca .mid {
+    font-size: 20px;
+    padding: 3dvh;
+  }
+
+  .books-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .dropbutton {
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+
+  footer {
+    font-size: 0.7rem;
+    padding: 5px;
+  }
+}

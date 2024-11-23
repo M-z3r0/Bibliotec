@@ -1,0 +1,226 @@
+.icon {
+  margin: 20dvh 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.content{
+  background-color: #2f0a2b;
+  flex: 1;
+}
+
+h1{
+  color: #ffffff;
+  align-self: center;
+  text-align: center;
+}
+
+.barra{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0px;
+}
+
+.barra > input[type="text"]{
+  width: 300px;
+  max-width: 300px;
+  font-size: 1rem;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 0px;
+}
+
+.barra > input[type="button"]{
+  width: 50px;
+  border: none;
+  background-color: #1b0126;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.form-container {
+  width: 80%;
+  margin-left: 10%;
+  float: left;
+  background: #4d1147;
+  max-height: 80dvh;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-edita-container {
+  width: 80%;
+  margin-left: 10%;
+  float: left;
+  background: #4d1147;
+  max-height: 80dvh;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 3fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+  gap: 15px;
+}
+
+.edita-form{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 3fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+  gap: 15px;
+}
+  
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+  
+.cadastro > input[type="text"],
+.cadastro > input[type="number"],
+.cadastro > input[type="file"],
+.cadastro > textarea,
+.cadastro > select,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+  
+.edita-form > input[type="text"],
+.edita-form > input[type="number"],
+.edita-form > input[type="file"],
+.edita-form > textarea,
+.edita-form > select,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+  
+button {
+  background-color: #1b0126;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  grid-column: 3 / -1;
+}
+
+.form-edita-container {
+  width: 80%;
+  margin-left: 10%;
+  float: left;
+  background: #4d1147;
+  max-height: 90dvh;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container span{
+  grid-column: 2 / -1;
+}
+
+.form-control-edita{
+  grid-column: 3 / -1;
+}
+
+.editar{
+  grid-column: 1 / -1;
+}
+  
+button:hover {
+  background-color: #3a0650;
+}  
+
+/*Responsividade*/
+@media (max-width: 768px) {
+  .barra {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .barra > input[type="text"],
+  .barra > input[type="button"] {
+    width: 100%;
+  }
+
+  .form-container, .form-edita-container {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  .cadastro, .edita-form {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .icon {
+    font-size: 1.2rem; 
+    margin: 10dvh 0;
+  }
+
+  .barra {
+    flex-direction: column;
+  }
+
+  .barra > input[type="text"],
+  .barra > input[type="button"] {
+    width: 100%; 
+    margin-bottom: 10px;
+  }
+
+  .form-container, .form-edita-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .cadastro, .edita-form {
+    grid-template-columns: 1fr;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+}

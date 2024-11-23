@@ -1,0 +1,46 @@
+.listar{
+  width: 100%;
+  padding: 5dvh 0;
+  flex-wrap: nowrap;
+}
+
+table{
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 20dvh;
+  overflow-x: scroll;
+  color: #ffffff;
+  margin: 5px; /* Espaço entre as divs */
+}
+
+table, th, td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+td a {
+  width: 100px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #1b0126;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
