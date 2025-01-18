@@ -1,0 +1,76 @@
+:root{
+    /* Colors */
+    --bg-color: #9B7EBD;
+    --font-color: white;
+    --strong-bg-color: #3B1E54;
+    --icon-color: white;
+    --shadow-color: rgba(0, 0, 0, 0.767);
+    --light-shadow-color: rgba(0, 0, 0, 0.322);
+    /* Size */
+    --shadow-size: 3px 2px 5px;
+    --common-text-size: 20px;
+    --small-text-size: 16px;;
+    --title-size: 40px;
+}/*Definição de variavéis*/
+header{
+    background-color: var(--bg-color);
+    width: 95%;
+    height: 9dvh;
+    position: fixed;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    color: var(--font-color);
+    filter: drop-shadow(var(--shadow-size) var(--shadow-color));
+    border-radius: 0px 0px 20px 0px;
+    & > h1{
+        font-size: var(--title-size);
+    }/*Título da página*/
+    & .search-bar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(var(--shadow-size) var(--light-shadow-color));
+        width: 40%;
+        & > input{
+            width: 90%;
+            height: 40px;
+            color: black;
+            padding: 0px 20px;
+            border-radius: 20px 0px 0px 20px;
+        }/*Barra de pesquisa*/
+        & > button{
+            width: 10%;
+            height: 40px;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0px 20px 20px 0px;
+            font-size: var(--common-text-size);
+            background-color: var(--strong-bg-color);
+        }/*Botão da barra de pesquisa*/
+    }/*Div da barra de pesquisa*/
+    & .user-sec{
+        display: flex;
+        width: 15%;
+        justify-content: space-between;
+        & .user-infos{
+            width: 80%;
+            font-size: var(--common-text-size);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            & h3{
+                text-align: center;
+                font-size: var(--small-text-size);
+            }/*Texto do tipo de usuário*/
+        }/*Div das informações do usuário*/
+        & > button{
+            font-size: var(--title-size);
+
+        }/*Botão de carrinho*/
+    }/*Sessão do usuário {Nome,Tipo de usuário e Cart}*/
+}/*Header geral*/

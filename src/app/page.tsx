@@ -1,7 +1,11 @@
+import './homepage.css';
+import { Header } from "@/components/Header/Header";
+import { SideBar } from "@/components/SideBar/SideBar";
 export default function Home() {
   return (
-    <>
-      <h1>Hello World</h1>
+    <> 
+      <Header pageName={null} userName={null} typeUser={null} />
+      <SideBar></SideBar>
     </>
   );
 }
