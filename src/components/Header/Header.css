@@ -1,4 +1,4 @@
-:root{
+:root {
     /* Colors */
     --bg-color: #9B7EBD;
     --font-color: white;
@@ -9,15 +9,18 @@
     /* Size */
     --shadow-size: 3px 2px 5px;
     --common-text-size: 20px;
-    --small-text-size: 16px;;
+    --small-text-size: 16px;
+    ;
     --title-size: 40px;
-}/*Definição de variavéis*/
-header{
+}
+
+/*Definição de variavéis*/
+header {
     background-color: var(--bg-color);
-    width: 95%;
-    height: 9dvh;
+    width: 97%;
+    height: 8dvh;
     position: fixed;
-    margin-left: 5%;
+    margin-left: 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,52 +28,90 @@ header{
     color: var(--font-color);
     filter: drop-shadow(var(--shadow-size) var(--shadow-color));
     border-radius: 0px 0px 20px 0px;
-    & > h1{
-        font-size: var(--title-size);
-    }/*Título da página*/
-    & .search-bar{
+    z-index: 2;
+
+    &>h1 {
+        font-size: 2rem;
+    }
+
+    /*Título da página*/
+    & div.search-bar {
         display: flex;
         align-items: center;
         justify-content: center;
         filter: drop-shadow(var(--shadow-size) var(--light-shadow-color));
-        width: 40%;
-        & > input{
-            width: 90%;
-            height: 40px;
-            color: black;
-            padding: 0px 20px;
-            border-radius: 20px 0px 0px 20px;
-        }/*Barra de pesquisa*/
-        & > button{
-            width: 10%;
-            height: 40px;
-            background-color: aqua;
+        width: 50%;
+
+        &>form {
             display: flex;
-            align-items: center;
             justify-content: center;
-            border-radius: 0px 20px 20px 0px;
-            font-size: var(--common-text-size);
-            background-color: var(--strong-bg-color);
-        }/*Botão da barra de pesquisa*/
-    }/*Div da barra de pesquisa*/
-    & .user-sec{
+            width: 80%;
+            margin-left: 10%;
+
+            &>input {
+                width: 90%;
+                padding: 5px 20px;
+                font-size: var(--small-text-size);
+                color: black;
+                border-radius: 20px 0px 0px 20px;
+                outline: none;
+            }
+
+            /*Barra de pesquisa*/
+            &>button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10%;
+                border-radius: 0px 20px 20px 0px;
+                background-color: var(--strong-bg-color);
+            }
+
+            /*Botão da barra de pesquisa*/
+        }
+
+        /*Formulário de envio da pesquisa*/
+    }
+
+    /*Div da barra de pesquisa*/
+    & .user-sec {
         display: flex;
         width: 15%;
         justify-content: space-between;
-        & .user-infos{
+
+        & .user-infos {
             width: 80%;
             font-size: var(--common-text-size);
             display: flex;
             flex-direction: column;
             text-align: center;
-            & h3{
+            justify-content: center;
+            line-height: 19px;
+
+            & h2 {
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            & h3 {
                 text-align: center;
-                font-size: var(--small-text-size);
-            }/*Texto do tipo de usuário*/
-        }/*Div das informações do usuário*/
-        & > button{
+                font-size: 0.8rem;
+            }
+
+            /*Texto do tipo de usuário*/
+        }
+
+        /*Div das informações do usuário*/
+        &>button {
             font-size: var(--title-size);
 
-        }/*Botão de carrinho*/
-    }/*Sessão do usuário {Nome,Tipo de usuário e Cart}*/
-}/*Header geral*/
+        }
+
+        /*Botão de carrinho*/
+    }
+
+    /*Sessão do usuário {Nome,Tipo de usuário e Cart}*/
+}
+
+/*Header geral*/

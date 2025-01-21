@@ -1,0 +1,130 @@
+CREATE TABLE adm(
+	adm_id INT NOT NULL PRIMARY KEY,
+	adm_userName VARCHAR(25) NOT NULL,
+	adm_name VARCHAR(40) NOT NULL,
+	adm_lastName VARCHAR(45),
+	adm_email VARCHAR(120),
+	adm_password VARCHAR(20));
+
+CREATE TABLE biblioteca(
+	biblio_cod INT NOT NULL PRIMARY KEY,
+	bilbio_name VARCHAR(255) NOT NULL,
+	biblio_entryDate DATE NOT NULL,
+	biblio_address VARCHAR(255),
+	biblio_state VARCHAR(2),
+	biblio_amountBookBorrow INT NOT NULL,
+	biblio_deadLine INT NOT NULL);
+
+CREATE TABLE livro(
+	livro_cod VARCHAR(40) NOT NULL PRIMARY KEY,
+	livro_title VARCHAR(255) NOT NULL,
+	livro_author VARCHAR(75) NOT NULL,
+	livro_bookCover TEXT NOT NULL,
+	livro_copies INT,
+	livro_pages INT,
+	livro_disuse INT DEFAULT 0,
+	livro_classification INT NOT NULL,
+	livro_evaluation INT,
+	livro_type INT,
+	livro_gender VARCHAR(255),
+	livro_synopsis TEXT,
+	biblio_cod INT,
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));
+
+CREATE TABLE funcionario(
+	func_id INT NOT NULL PRIMARY KEY,
+	func_name VARCHAR (40),
+	func_lastName VARCHAR(45),
+	func_email VARCHAR(120),
+	func_password VARCHAR(20),
+	func_accessLevel INT,
+	biblio_cod INT,
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));
+
+CREATE TABLE aluno(
+	aluno_register INT NOT NULL PRIMARY KEY,
+	aluno_name VARCHAR(40) NOT NULL,
+	aluno_lastName VARCHAR(45),
+	aluno_class VARCHAR(10) NOT NULL,
+	aluno_backPack TEXT,
+	aluno_pending TEXT,
+	aluno_delay INT,
+	aluno_note TEXT,
+	aluno_loanAmount INT,
+	aluno_numberBookPicked INT,
+	aluno_history TEXT,
+	aluno_level INT,
+	aluno_frequency INT,
+	biblio_cod INT,
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));
+
+CREATE TABLE pedido_emprestimo(
+	pedido_emp_id INT NOT NULL PRIMARY KEY,
+	pedido_emp_pedido TEXT,
+	pedido_emp_date DATE,
+	pedido_emp_read INT,
+	pedido_emp_cancel INT,
+	pedido_emp_obs TEXT,
+	aluno_register INT,
+	biblio_cod INT,
+	CONSTRAINT fk_aluno FOREIGN KEY (aluno_register) REFERENCES aluno(aluno_register),
+CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));
+	
+CREATE TABLE pedido_devolucao(
+	pedido_dev_id INT NOT NULL PRIMARY KEY,
+	pedido_dev_pedido TEXT,
+	pedido_dev_date DATE,
+	pedido_dev_read INT,
+	pedido_dev_delay INT,
+	pedido_dev_cancel INT,
+	pedido_dev_obs TEXT,
+	aluno_register INT,
+	biblio_cod INT,
+	CONSTRAINT fk_aluno FOREIGN KEY (aluno_register) REFERENCES aluno(aluno_register),
+CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));	
+	
+CREATE TABLE pedido_extensao(
+	pedido_ext_id INT NOT NULL PRIMARY KEY,
+	pedido_ext_pedido TEXT,
+	pedido_ext_date DATE,
+	pedido_ext_read INT,
+	pedido_ext_delay INT,
+	pedido_ext_cancel INT,
+	pedido_ext_obs TEXT,
+	aluno_register INT,
+	biblio_cod INT,
+	CONSTRAINT fk_aluno FOREIGN KEY (aluno_register) REFERENCES aluno(aluno_register),
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));	
+
+CREATE TABLE pendencia(
+	pendencia_id INT NOT NULL PRIMARY KEY,
+	pendencia_pending TEXT,
+	pendencia_type INT,
+	pendencia_date DATE,
+	pendencia_solved INT,
+	aluno_register INT,
+	biblio_cod INT,
+	CONSTRAINT fk_aluno FOREIGN KEY (aluno_register) REFERENCES aluno(aluno_register),
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));	
+
+CREATE TABLE mochila(
+	mochila_id INT NOT NULL PRIMARY KEY,
+	mochila_backpack TEXT,
+	aluno_register INT,
+	biblio_cod INT,
+	CONSTRAINT fk_aluno FOREIGN KEY (aluno_register) REFERENCES aluno(aluno_register),
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));	
+
+CREATE TABLE emprestimo(
+	emprestimo_id INT NOT NULL PRIMARY KEY,
+	empestimo_book TEXT,
+	emprestimo_availableDays INT,
+	emprestimo_initDate DATE,
+	emprestimo_endDate DATE,
+	emprestimo_deliveryDate DATE,
+	emprestimo_extension INT,
+	aluno_register INT,
+	biblio_cod INT,
+	CONSTRAINT fk_aluno FOREIGN KEY (aluno_register) REFERENCES aluno(aluno_register),
+	CONSTRAINT fk_biblioteca FOREIGN KEY (biblio_cod) REFERENCES biblioteca(biblio_cod));	
+

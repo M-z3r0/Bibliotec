@@ -1,10 +1,14 @@
-import './homepage.css';
+import './homepage.css';;
+import {pool} from "@/utils/db/postgres";
+import postgres from "@/utils/db/postgres";
 import { Header } from "@/components/Header/Header";
 import { SideBar } from "@/components/SideBar/SideBar";
-export default function Home() {
+import Link from 'next/link'
+export default async function Home() {
+  postgres();  
   return (
     <> 
-      <Header pageName={null} userName={null} typeUser={null} />
+      <Header pageName={null} userName="Beja" typeUser="Aluno" />
       <SideBar></SideBar>
     </>
   );

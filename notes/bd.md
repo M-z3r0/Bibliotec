@@ -20,18 +20,38 @@
 
   # Ent & Atr (Português):
     Adm: Id, UserName, Name, LastName, Email, Password;
-    Biblioteca: Id, Name, InitDate, Address, State, QtdLivroPossiveis, DataLimite, TurmaLeitora;
-    Livro: Cod, Titulo, Autor, Capa, Qtd, Paginas, Tombo (para que entraram em desuso), Classificacao, Avaliacao, Tipo, Genero, Sinopse, Id-biblioteca
-    Funcionario: Id, Name, LastName, Password, Email, NivelHieraquia, Id-biblioteca
-    Aluno: Id(rm&ra), Name, LastName, Turma, Mochila[QtdLivroPossiveis], Pendencia, Anotacao, QtdEmprestimo, QtdLivrosPegos, Historico, Nivel, Frequencia, Id-biblioteca
-    Pedido_Emprestimo: Id, Aluno, Pedido[QtdLivroPossiveis], Data, Visto, Cancelado, Obs, Id-biblioteca
-    Pedido_Devolucao: Id, Aluno, Pedido[Mochila], Data, Visto, Cancelado, Obs, Id-biblioteca
-    Pedido_Extensao: Id, Aluno, Pedido[Mochila], Data, Visto, Cancelado, Obs, Id-biblioteca
-    Emprestimo: Id, Aluno, Livros[Pedido], DataInicio, DataLimite, DataEntrega, Extensao, Id-biblioteca
-    Pendencia: Id, Aluno, Tipo, Data, Resolvida, Id-biblioteca
+
+    Biblioteca: Id, Name, InitDate, Address, State, QtdLivroPossiveis, DataLimite;
+
+    Livro: Cod, Titulo, Autor, Capa, Qtd, Paginas, Tombo (para que entraram em desuso), Classificacao, Avaliacao, Tipo, Genero, Sinopse, Id-biblioteca;
+
+    Funcionario: Id, Name, LastName, Password, Email, NivelHieraquia, Id-biblioteca;
+
+    Aluno: Id(rm&ra), Name, LastName, Turma, Mochila[QtdLivroPossiveis], Pendencia, Anotacao, QtdEmprestimo, QtdLivrosPegos, Historico, Nivel, Frequencia, Id-biblioteca;
+
+    Pedido_Emprestimo: Id, Aluno, Pedido[Mochila], Data, Visto, Cancelado, Obs, Id-biblioteca;
+
+    Pedido_Devolucao: Id, Aluno, Pedido[Mochila], Data, Visto, Cancelado, Obs, Id-biblioteca;
+
+    Pedido_Extensao: Id, Aluno, Pedido[Mochila], Data, Visto, Cancelado, Obs, Id-biblioteca;
+
+    Emprestimo: Id, Aluno, Livros[Pedido], DataInicio, DataLimite, DataEntrega, Extensao, Id-biblioteca;
+
+    Pendencia: Id, Aluno, Pendencia,Tipo, Data, Resolvida, Id-biblioteca;
+
     Mochila (Carrinhno): Id, Mochila[Pedido], Aluno, Id-biblioteca
 
-
-
-cod,titulo,autor,capa,qtd,
+        # # Relacionamentos:
+          Livro -> Biblioteca
+          Funcionario -> Biblioteca
+          Aluno -> Biblioteca
+          Aluno -> Mochila
+          Aluno -> Pedido_Emprestimo
+          Aluno -> Pedido_Devolucao
+          Aluno -> Pedido_Extensao
+          Aluno -> Mochila
+          Aluno -> Pendencia
+          Livro -> Emprestimo
+          Livro -> Mochila
+          Pedido_Emprestimo -> Mochila
 
